@@ -1,0 +1,52 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "position": {
+      "type": "string",
+      "description": "Job title/position"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Short biography"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Profile photo URL"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "linkedin": {
+      "type": "string",
+      "description": "LinkedIn profile URL"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "leadership",
+        "research",
+        "editing",
+        "support"
+      ],
+      "description": "Department"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "position"
+  ]
+}

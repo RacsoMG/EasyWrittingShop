@@ -1,0 +1,58 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief project description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Project image URL"
+    },
+    "field": {
+      "type": "string",
+      "enum": [
+        "economics",
+        "medicine",
+        "psychology",
+        "engineering",
+        "business",
+        "law",
+        "education",
+        "other"
+      ],
+      "description": "Academic field"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "college",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "description": "Academic level"
+    },
+    "year": {
+      "type": "number",
+      "description": "Year completed"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "field",
+    "level"
+  ]
+}

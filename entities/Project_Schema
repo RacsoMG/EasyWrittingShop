@@ -1,0 +1,51 @@
+title
+(
+text
+, required
+)
+Project title
+
+description
+(
+text
+)
+Brief project description
+
+image_url
+(
+text
+)
+Project image URL
+
+field
+(
+text
+, required
+)
+Academic field
+
+Options: economics, medicine, psychology, engineering, business, law, education, other
+level
+(
+text
+, required
+)
+Academic level
+
+Options: college, undergraduate, postgraduate
+year
+(
+number
+)
+Year completed
+
+is_featured
+(
+boolean
+)
+Default: false
+is_active
+(
+boolean
+)
+Default: true

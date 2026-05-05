@@ -1,0 +1,40 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Service name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the service"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon name from Lucide"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "college",
+        "undergraduate",
+        "postgraduate",
+        "research"
+      ],
+      "description": "Service category"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ]
+}

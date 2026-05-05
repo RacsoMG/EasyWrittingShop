@@ -1,0 +1,19 @@
+title (text, required)
+Service name
+
+description (text, required)
+Detailed description of the service
+
+icon(text)
+Icon name from Lucide
+
+category(text)
+Service category
+
+Options: college, undergraduate, postgraduate, research
+
+is_active(boolean
+)Default: true
+
+order(number)
+Default: 0

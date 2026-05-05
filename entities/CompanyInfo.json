@@ -1,0 +1,37 @@
+{
+  "name": "CompanyInfo",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Unique key for the info type"
+    },
+    "value": {
+      "type": "string",
+      "description": "The value/content"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "contact",
+        "social",
+        "about",
+        "objective"
+      ],
+      "description": "Type of information"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon name"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "key",
+    "value",
+    "type"
+  ]
+}
