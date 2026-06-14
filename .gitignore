@@ -54,3 +54,8 @@ Thumbs.db
 .next
 .cache
 .eslintcache
+
+# claude
+.claude/
+.claude/*
+CLAUDE.md
