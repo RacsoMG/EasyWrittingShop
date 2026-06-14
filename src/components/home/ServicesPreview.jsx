@@ -6,6 +6,8 @@ import { createPageUrl } from "@/utils";
 import { useQuery } from "@tanstack/react-query";
 import { getPreviewServices } from "@/lib/local-data";
 import { Skeleton } from "@/components/ui/skeleton";
+import Lazy3DBackdrop from "@/components/home/Lazy3DBackdrop";
+import ConstellationPoster from "@/components/home/ConstellationPoster";
 
 const iconMap = {
   FileText,
@@ -34,8 +36,13 @@ export default function ServicesPreview() {
   const displayServices = services?.length > 0 ? services : defaultServices;
 
   return (
-    <section className="py-24 bg-black">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="py-24 bg-black relative overflow-hidden">
+      {/* Subtle shared 3D motif; sparse + low opacity to keep cards legible */}
+      <Lazy3DBackdrop
+        poster={<ConstellationPoster glowClassName="h-[520px] w-[520px] bg-gradient-to-br from-white/[0.04] to-transparent" />}
+        scene={{ count: 90, coreOpacity: 0.08, pointOpacity: 0.35 }}
+      />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

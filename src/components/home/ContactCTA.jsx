@@ -3,15 +3,21 @@ import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
+import Lazy3DBackdrop from "@/components/home/Lazy3DBackdrop";
 
 export default function ContactCTA() {
   return (
     <section className="py-24 bg-black relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-      </div>
+      {/* Animated 3D motif; the original blur blobs serve as the static poster */}
+      <Lazy3DBackdrop
+        poster={
+          <div className="absolute inset-0" aria-hidden="true">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          </div>
+        }
+        scene={{ count: 120, coreOpacity: 0.1, pointOpacity: 0.4 }}
+      />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div

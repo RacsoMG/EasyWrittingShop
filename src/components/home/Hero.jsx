@@ -3,16 +3,17 @@ import { ArrowRight, BookOpen, GraduationCap, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
+import Lazy3DBackdrop from "@/components/home/Lazy3DBackdrop";
+import ConstellationPoster from "@/components/home/ConstellationPoster";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-black overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+      {/* Animated 3D backdrop with static fallback (non-blocking to LCP) */}
+      <Lazy3DBackdrop
+        poster={<ConstellationPoster showGrid />}
+        scene={{ count: 220, coreOpacity: 0.18, pointOpacity: 0.7 }}
+      />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
