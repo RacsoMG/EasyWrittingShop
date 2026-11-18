@@ -175,8 +175,6 @@ export default function Layout({ children, currentPageName }) {
               <h4 className="font-semibold mb-4">Contact</h4>
               <div className="flex flex-col gap-2 text-gray-400 text-sm">
                 <span>contact@easyworkshop.com</span>
-                <span>+1 (555) 123-4567</span>
-                <span>New York, NY</span>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
@@ -47,7 +47,7 @@ export default function ContactCTA() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 pt-12 border-t border-white/10">
+          <div className="flex justify-center pt-12 border-t border-white/10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -60,34 +60,6 @@ export default function ContactCTA() {
               </div>
               <p className="text-gray-400 text-sm mb-1">Email Us</p>
               <p className="text-white font-medium">contact@easyworkshop.com</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex flex-col items-center"
-            >
-              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
-                <Phone className="w-6 h-6 text-white" />
-              </div>
-              <p className="text-gray-400 text-sm mb-1">Call Us</p>
-              <p className="text-white font-medium">+1 (555) 123-4567</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col items-center"
-            >
-              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
-                <MapPin className="w-6 h-6 text-white" />
-              </div>
-              <p className="text-gray-400 text-sm mb-1">Visit Us</p>
-              <p className="text-white font-medium">New York, NY</p>
             </motion.div>
           </div>
         </motion.div>

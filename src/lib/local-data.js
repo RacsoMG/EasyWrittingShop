@@ -76,7 +76,8 @@ const defaultProjects = [
     field: 'psychology',
     level: 'postgraduate',
     year: 2024,
-    image_url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80',
+    image_url: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80',
+    image_alt: 'Therapist and client in conversation during a counseling session, illustrating cognitive behavioral therapy research',
     description: 'In-depth analysis of cognitive behavioral therapy outcomes in adolescent patients with anxiety disorders.',
     is_featured: true,
     is_active: true,
@@ -177,6 +178,18 @@ const defaultState = {
   teamMembers: defaultTeamMembers,
 };
 
+// Unsplash removed these photos (they now return 404). Visitors who loaded the site earlier
+// still hold the old seed URLs in localStorage, so swap them on read.
+const RETIRED_IMAGE_URLS = {
+  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80':
+    'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80',
+};
+
+export const replaceRetiredImages = (projects) => projects.map((project) => {
+  const replacementUrl = RETIRED_IMAGE_URLS[project.image_url];
+  return replacementUrl ? { ...project, image_url: replacementUrl } : project;
+});
+
 const isBrowser = typeof window !== 'undefined';
 
 const readState = () => {
@@ -193,7 +206,7 @@ const readState = () => {
     const stored = JSON.parse(value);
     return {
       services: Array.isArray(stored.services) ? stored.services : defaultServices,
-      projects: Array.isArray(stored.projects) ? stored.projects : defaultProjects,
+      projects: Array.isArray(stored.projects) ? replaceRetiredImages(stored.projects) : defaultProjects,
       teamMembers: Array.isArray(stored.teamMembers) ? stored.teamMembers : defaultTeamMembers,
     };
   } catch (error) {

@@ -9,7 +9,7 @@ import { Filter } from "lucide-react";
 
 const defaultProjects = [
   { title: "Economic Impact Analysis", field: "economics", level: "postgraduate", year: 2024, image_url: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80", description: "Comprehensive study on market dynamics and economic policy effects in emerging markets." },
-  { title: "Clinical Psychology Research", field: "psychology", level: "postgraduate", year: 2024, image_url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80", description: "In-depth analysis of cognitive behavioral therapy outcomes in adolescent patients." },
+  { title: "Clinical Psychology Research", field: "psychology", level: "postgraduate", year: 2024, image_url: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80", description: "In-depth analysis of cognitive behavioral therapy outcomes in adolescent patients." },
   { title: "Medical Data Analytics", field: "medicine", level: "undergraduate", year: 2024, image_url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", description: "Statistical analysis of patient health records and treatment outcomes." },
   { title: "Business Strategy Analysis", field: "business", level: "postgraduate", year: 2023, image_url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80", description: "Strategic analysis of market entry strategies for multinational corporations." },
   { title: "Legal Framework Study", field: "law", level: "undergraduate", year: 2023, image_url: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80", description: "Comparative analysis of intellectual property laws across jurisdictions." },
@@ -148,7 +148,7 @@ export default function Projects() {
                         <div className="relative h-56 overflow-hidden">
                           <img
                             src={project.image_url}
-                            alt={project.title}
+                            alt={project.image_alt || project.title}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

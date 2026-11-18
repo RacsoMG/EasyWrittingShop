@@ -20,7 +20,7 @@ const defaultProjects = [
     title: "Clinical Psychology Research",
     field: "psychology",
     level: "postgraduate",
-    image_url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80",
+    image_url: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80",
     description: "In-depth analysis of cognitive behavioral therapy outcomes."
   },
   {
@@ -97,7 +97,7 @@ export default function ProjectsPreview() {
                   <div className="relative h-56 overflow-hidden">
                     <img
                       src={project.image_url}
-                      alt={project.title}
+                      alt={project.image_alt || project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

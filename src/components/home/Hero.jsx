@@ -52,7 +52,7 @@ export default function Hero() {
                 </Button>
               </Link>
               <Link to={createPageUrl("Contact")}>
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 h-14 px-8 text-base">
+                <Button size="lg" variant="outline" className="bg-transparent border-white/70 text-white hover:bg-white/10 hover:border-white hover:text-white active:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black h-14 px-8 text-base">
                   Contact Us
                 </Button>
               </Link>

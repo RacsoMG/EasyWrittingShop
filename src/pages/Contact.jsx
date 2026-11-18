@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { Mail, Send, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,10 +9,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "contact@easyworkshop.com", href: "mailto:contact@easyworkshop.com" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-  { icon: MapPin, label: "Address", value: "123 Academic Ave, New York, NY 10001" },
-  { icon: Clock, label: "Hours", value: "Mon - Fri: 9AM - 6PM EST" }
+  { icon: Mail, label: "Email", value: "contact@easyworkshop.com", href: "mailto:contact@easyworkshop.com" }
 ];
 
 const socialLinks = [
@@ -79,6 +76,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="lg:sticky lg:top-28 lg:self-start"
             >
               <h2 className="text-3xl font-bold text-black mb-8">Get in Touch</h2>
               
@@ -125,15 +123,6 @@ export default function Contact() {
                     </a>
                   ))}
                 </div>
-              </div>
-
-              {/* Map placeholder */}
-              <div className="mt-12 rounded-2xl overflow-hidden h-64 bg-gray-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" 
-                  alt="Office location"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                />
               </div>
             </motion.div>
 
@@ -278,8 +267,7 @@ export default function Contact() {
             {[
               { q: "How long does a typical project take?", a: "Project timelines vary based on complexity. Simple papers may take 3-5 days, while dissertations can take several weeks. We'll provide a timeline during consultation." },
               { q: "What fields do you cover?", a: "We cover all major academic fields including Economics, Medicine, Psychology, Engineering, Business, Law, Education, and more." },
-              { q: "Is my work confidential?", a: "Absolutely. We maintain strict confidentiality and never share or resell any work. Your privacy is our priority." },
-              { q: "Do you offer revisions?", a: "Yes, we offer free revisions until you're completely satisfied with the work, within the scope of the original requirements." }
+              { q: "Is my work confidential?", a: "Absolutely. We maintain strict confidentiality and never share or resell any work. Your privacy is our priority." }
             ].map((faq, index) => (
               <motion.div
                 key={index}
@@ -287,7 +275,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 rounded-2xl"
+                className="bg-white p-6 rounded-2xl md:last:odd:col-span-2 md:last:odd:justify-self-center md:last:odd:w-[calc(50%-1rem)]"
               >
                 <h3 className="font-bold text-black mb-2">{faq.q}</h3>
                 <p className="text-gray-600 text-sm">{faq.a}</p>
